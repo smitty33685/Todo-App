@@ -1,7 +1,14 @@
 import React from "react";
+import Navigation from "./components/Navigation/Navigation";
+import GlobalStyles from "./globalStyles";
 
 const App = () => {
-  return <div className="App"></div>;
+  return (
+    <>
+      <GlobalStyles />
+      <Navigation text="Todo List" />
+    </>
+  );
 };
 
 export default App;

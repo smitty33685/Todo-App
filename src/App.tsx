@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "./components/Navigation/Navigation";
-import ListTodos from "./components/ListTodos/ListTodos";
+import Lists from "./components/Lists/Lists";
 import GlobalStyles from "./globalStyles";
 
-interface Todos {
+export const Context = React.createContext<Todo[]>([]);
+
+interface Todo {
   userId: number;
   id: number;
   title: string;
@@ -11,9 +13,7 @@ interface Todos {
 }
 
 const App = () => {
-  const [todos, setTodos] = useState<Todos[]>([]);
-
-  console.log(todos);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const getTodos = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
@@ -27,11 +27,11 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <Context.Provider value={todos}>
       <GlobalStyles />
       <Navigation text="Todo List" />
-      <ListTodos />
-    </>
+      <Lists />
+    </Context.Provider>
   );
 };
 

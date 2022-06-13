@@ -2,7 +2,7 @@ import React from "react";
 import { StyledNavigation, Heading } from "./Navigation.styled";
 
 interface Props {
-  text: String;
+  text: string;
 }
 
 const Navigation: React.FC<Props> = ({ text }) => {

@@ -1,15 +1,13 @@
 import React from "react";
 import { StyledTodo } from "./Todo.styled";
+import { TodoObj } from "../../App";
 
-interface Props {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
-
-const Todo: React.FC<any> = ({ id, userId, title, completed }) => {
-  return <StyledTodo>{title}</StyledTodo>;
+const Todo: React.FC<TodoObj> = ({ id, title, completed }) => {
+  return (
+    <StyledTodo>
+      {id} {title}
+    </StyledTodo>
+  );
 };
 
 export default Todo;

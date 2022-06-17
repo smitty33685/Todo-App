@@ -2,20 +2,10 @@ import React, { useState, useEffect } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import Lists from "./components/Lists/Lists";
 import CreateTodo from "./components/CreateTodo/CreateTodo";
-import GlobalStyles from "./globalStyles";
+import GlobalStyles from "./styles/globalStyles";
+import { TodoObj, NewTodo } from "./types/interfaces";
 
 export const Context = React.createContext<TodoObj[]>([]);
-
-export interface TodoObj {
-  id: number;
-  title: string;
-  completed: boolean;
-}
-
-export interface NewTodo {
-  title: string;
-  completed: boolean;
-}
 
 const App = () => {
   const [todos, setTodos] = useState<TodoObj[]>([]);
@@ -24,7 +14,7 @@ const App = () => {
     const response = await fetch("http://localhost:5000/todos");
     const data = await response.json();
 
-    setTodos(data.splice(0, 10));
+    setTodos(data);
   };
 
   const addTodo = async (todo: NewTodo) => {

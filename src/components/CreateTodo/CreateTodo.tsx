@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyledCreateTodo } from "./CreateTodo.styled";
-import { NewTodo } from "../../App";
+import { NewTodo } from "../../types/interfaces";
 
 interface Props {
   addTodo: ({}: NewTodo) => void;

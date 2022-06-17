@@ -3,7 +3,7 @@ import { StyledMain } from "./Lists.styled";
 import { Context } from "../../App";
 import Todo from "../Todo/Todo";
 
-const Lists = () => {
+const Lists: React.FC = () => {
   const todos = useContext(Context);
 
   return (

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledInputProps } from "../../types/interfaces.styles";
 
 export const StyledCreateTodo = styled.form`
   padding: 1rem 2rem;
@@ -13,7 +14,7 @@ export const StyledCreateTodo = styled.form`
   }
 `;
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<StyledInputProps>`
   width: 100%;
   padding: 0.7rem 1rem;
   margin-bottom: 0.8rem;
@@ -21,6 +22,8 @@ export const StyledInput = styled.input`
   outline: none;
   border: none;
   box-sizing: border-box;
+  color: ${props => (props.errorColor ? "#ff0000" : "#000")};
+  border: 2px solid ${props => (props.errorColor ? "#ff0000" : "#fff")};
 
   @media (min-width: 768px) {
     width: 400px;
@@ -40,4 +43,14 @@ export const StyledFormGroup = styled.div`
     margin-bottom: 0;
     margin: 0 1rem;
   }
+`;
+
+export const StyledInputWrapper = styled.div`
+  position: relative;
+`;
+
+export const StyledCount = styled.p`
+  position: absolute;
+  top: 12px;
+  right: 5px;
 `;

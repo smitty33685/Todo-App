@@ -14,6 +14,7 @@ export interface NavigationProps {
 }
 export interface ButtonProps {
   text: string;
+  disabled: boolean;
   handleClick: () => void;
 }
 export interface CreateTodoProps {

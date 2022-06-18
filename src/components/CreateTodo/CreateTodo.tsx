@@ -14,7 +14,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ addTodo }) => {
         name="todo"
         placeholder="Write todo.."
         value={title}
-        onChange={event => setTitle(event.target.value)}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setTitle(event.target.value)}
       />
       <StyledFormGroup>
         <label>Completed:</label>
@@ -22,7 +22,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ addTodo }) => {
           type="checkbox"
           name="completed"
           checked={completed}
-          onChange={event => setCompleted(event.target.checked)}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => setCompleted(event.target.checked)}
         />
       </StyledFormGroup>
       <Button

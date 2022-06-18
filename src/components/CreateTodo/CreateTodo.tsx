@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import { StyledCreateTodo, StyledInput, StyledCheckbox, StyledFormGroup } from "./CreateTodo.styled";
-import { NewTodo } from "../../types/interfaces";
-
-interface CreateTodoProps {
-  addTodo: ({}: NewTodo) => void;
-}
+import { CreateTodoProps } from "../../types/interfaces";
 
 const CreateTodo: React.FC<CreateTodoProps> = ({ addTodo }) => {
   const [title, setTitle] = useState<string>("");
@@ -21,7 +17,7 @@ const CreateTodo: React.FC<CreateTodoProps> = ({ addTodo }) => {
         onChange={event => setTitle(event.target.value)}
       />
       <StyledFormGroup>
-        <label>Priority:</label>
+        <label>Completed:</label>
         <StyledCheckbox
           type="checkbox"
           name="completed"

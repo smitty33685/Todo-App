@@ -1,11 +1,8 @@
 import React from "react";
 import { StyledNavigation, Heading } from "./Navigation.styled";
+import { NavigationProps } from "../../types/interfaces";
 
-interface Props {
-  text: string;
-}
-
-const Navigation: React.FC<Props> = ({ text }) => {
+const Navigation: React.FC<NavigationProps> = ({ text }) => {
   return (
     <StyledNavigation>
       <Heading>{text}</Heading>

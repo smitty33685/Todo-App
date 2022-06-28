@@ -4,7 +4,13 @@ import { ButtonProps } from "../../types/interfaces";
 
 const Button: React.FC<ButtonProps> = ({ text, handleClick, disabled }) => {
   return (
-    <StyledButton onClick={handleClick} disabled={disabled}>
+    <StyledButton
+      onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        handleClick();
+      }}
+      disabled={disabled}
+    >
       {text}
     </StyledButton>
   );

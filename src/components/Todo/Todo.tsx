@@ -1,11 +1,12 @@
 import React from "react";
-import { StyledTodo } from "./Todo.styled";
+import { StyledTodo, StyledParagraph } from "./Todo.styled";
 import { TodoObj } from "../../types/interfaces";
 
 const Todo: React.FC<TodoObj> = ({ id, title, completed }) => {
   return (
-    <StyledTodo>
-      {id} {title}
+    <StyledTodo completed={completed}>
+      <StyledParagraph>{id}</StyledParagraph>
+      <h4>{title}</h4>
     </StyledTodo>
   );
 };
